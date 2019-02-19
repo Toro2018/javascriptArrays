@@ -11,16 +11,18 @@ function sumCheck (arr,tar) {
 	let answer = [];
 	for (i= 0; i < arr.length; i++) {
 		for (j = i+1; j < arr.length; j++) {
-			if ( Number(arr[i]) + Number(arr[j]) === Number(tar) ) {
+			if ( Number(arr[i]) + Number(arr[j]) === tar ) {
 				answer.push( [ arr[i], arr[j] ] );												
 			}
 		}	
 	}
+
 	return answer;	
 }
 
 
-sumCheck (arrToTest,target);
+const result = sumCheck (arrToTest,target);
+console.log(result);
 // in case there are more than one combinations, the answerArray will show all of them
 
 

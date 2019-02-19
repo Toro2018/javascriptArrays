@@ -23,6 +23,7 @@ function rgbToHex(string1){
 	let arr2=arr1.map(value=>{return Number(value).toString(16).padStart(2,'0')});
 	// change the array into string again
 	let string3='#'+arr2.join('');
+	console.log(string3);
 	return string3;
 	}
 
@@ -31,22 +32,27 @@ function hexToRgb(string1){
 	// change the string into array with 6 elements
 	arr1=string1.replace("#","").split('');
 	arr2=[];
-	for(i=0;i<arr1.length-1;i=i+2)
-		// combine 6 elements as 3 elements, push into a new array
-		{arr2.push(arr1[i]+arr1[i+1])}
+	for(i=0;i<arr1.length-1;i=i+2) {
+			// combine 6 elements as 3 elements, push into a new array
+			arr2.push(arr1[i]+arr1[i+1])
+		}
 		// change these 3 elements to hex format
 		arr3=arr2.map(value=>{return parseInt(value, 16)});
 		// change the array into string again, adding "rgb" and ()
-		return string2='rgb('+arr3.join(",")+')';
+
+		const string2='rgb('+arr3.join(",")+')';
+		console.log(string2)
+		return string2;
 }
 
 
 // test
-color1="rgb(1, 1, 1)";
+const color1="rgb(1, 1, 1)";
 checkColorType(color1);
 
-color2='#010101';
+const color2='#010101';
 checkColorType(color2);
 
-color3='#ffffff';
+const color3='#ffffff';
 checkColorType(color3);
+
